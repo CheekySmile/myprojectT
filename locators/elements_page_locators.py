@@ -48,5 +48,17 @@ class WebTablePageLocators:
     SEARCH_INPUT = (By.CSS_SELECTOR, "input[id='searchBox']")
     DELETE_BUTTON = (By.CSS_SELECTOR, "span[title='Delete']")
     ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
+    NO_ROWS = (By.CSS_SELECTOR, "div[class='rt-noData']")
+    COUNT_ROWS = (By.CSS_SELECTOR, "select[aria-label='rows per page']")
+
+    #update person
+    UPDATE_BUTTON = (By.CSS_SELECTOR, "span[title='Edit']")
+    UPDATE_FIRSTNAME = (By.CSS_SELECTOR, "input[id='firstName']")
+    UPDATE_LASTNAME = (By.CSS_SELECTOR, "input[id='lastName']")
+    UPDATE_EMAIL = (By.CSS_SELECTOR, "input[id='userEmail']")
+    UPDATE_AGE = (By.CSS_SELECTOR, "input[id='age']")
+    UPDATE_SALARY = (By.CSS_SELECTOR, "input[id='salary']")
+    UPDATE_DEPARTMENT = (By.CSS_SELECTOR, "input[id='department']")
+    UPDATE_SUBMIT = (By.CSS_SELECTOR, "button[id='submit']")
 
 
