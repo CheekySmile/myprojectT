@@ -62,3 +62,16 @@ class WebTablePageLocators:
     UPDATE_SUBMIT = (By.CSS_SELECTOR, "button[id='submit']")
 
 
+class ButtonsPageLocators:
+    #Buttons
+    DOUBLE_BUTTON = (By.CSS_SELECTOR, "button[id='doubleClickBtn']")
+    RIGHT_CLICK_BUTTON = (By.CSS_SELECTOR, "button[id='rightClickBtn']")
+    CLICK_ME_BUTTON = (By.XPATH, "//div[3]/button")
+
+    #Result
+    SUCCESS_DOUBLE = (By.CSS_SELECTOR, "p[id='doubleClickMessage']")
+    SUCCESS_RIGHT = (By.CSS_SELECTOR, "p[id='rightClickMessage']")
+    SUCCESS_CLICK =  (By.CSS_SELECTOR, "p[id='dynamicClickMessage']")
+
+
+
