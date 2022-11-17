@@ -33,7 +33,7 @@ class RadioButtonPageLocators:
 
 
 class WebTablePageLocators:
-    #add new person
+    # add new person
     ADD_BUTTON = (By.CSS_SELECTOR, "button[id='addNewRecordButton']")
     FIRSTNAME_INPUT = (By.CSS_SELECTOR, "input[id='firstName']")
     LASTNAME_INPUT = (By.CSS_SELECTOR, "input[id='lastName']")
@@ -43,7 +43,7 @@ class WebTablePageLocators:
     DEPARTMENT_INPUT = (By.CSS_SELECTOR, "input[id='department']")
     SUBMIT = (By.CSS_SELECTOR, "button[id='submit']")
 
-    #tables
+    # tables
     FULL_PEOPLE_LIST = (By.CSS_SELECTOR, "div[class='rt-tr-group']")
     SEARCH_INPUT = (By.CSS_SELECTOR, "input[id='searchBox']")
     DELETE_BUTTON = (By.CSS_SELECTOR, "span[title='Delete']")
@@ -51,7 +51,7 @@ class WebTablePageLocators:
     NO_ROWS = (By.CSS_SELECTOR, "div[class='rt-noData']")
     COUNT_ROWS = (By.CSS_SELECTOR, "select[aria-label='rows per page']")
 
-    #update person
+    # update person
     UPDATE_BUTTON = (By.CSS_SELECTOR, "span[title='Edit']")
     UPDATE_FIRSTNAME = (By.CSS_SELECTOR, "input[id='firstName']")
     UPDATE_LASTNAME = (By.CSS_SELECTOR, "input[id='lastName']")
@@ -63,15 +63,18 @@ class WebTablePageLocators:
 
 
 class ButtonsPageLocators:
-    #Buttons
+    # Buttons
     DOUBLE_BUTTON = (By.CSS_SELECTOR, "button[id='doubleClickBtn']")
     RIGHT_CLICK_BUTTON = (By.CSS_SELECTOR, "button[id='rightClickBtn']")
     CLICK_ME_BUTTON = (By.XPATH, "//div[3]/button")
 
-    #Result
+    # Result
     SUCCESS_DOUBLE = (By.CSS_SELECTOR, "p[id='doubleClickMessage']")
     SUCCESS_RIGHT = (By.CSS_SELECTOR, "p[id='rightClickMessage']")
-    SUCCESS_CLICK =  (By.CSS_SELECTOR, "p[id='dynamicClickMessage']")
+    SUCCESS_CLICK = (By.CSS_SELECTOR, "p[id='dynamicClickMessage']")
 
 
-
+class LinksPageLocators:
+    SIMPLE_LINK = (By.CSS_SELECTOR, "a[id='simpleLink']")
+    DYNAMIC_LINK = (By.CSS_SELECTOR, "a[id='dynamicLink']")
+    BAD_REQUEST_LINK = (By.CSS_SELECTOR, "a[id='bad-request']")

@@ -2,7 +2,7 @@ import random
 import time
 
 from pages.base_page import BasePage
-from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage
+from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage
 
 
 class TestElements:
@@ -92,6 +92,29 @@ class TestElements:
             assert double == "You have done a double click", "The double button was not pressed"
             assert right == "You have done a right click", "The right button was not pressed"
             assert click == "You have done a dynamic click", "The click button was not pressed"
+
+    class TestLinksPage:
+        def test_check_links(self, driver):
+            links_page = LinksPage(driver, 'https://demoqa.com/links')
+            links_page.open()
+            href_link, current_url = links_page.check_new_tab_simple_link()
+            assert href_link == current_url, "the link is broken or url is incorrect"
+
+        def test_check_dynamic_links(self, driver):
+            links_page = LinksPage(driver, 'https://demoqa.com/links')
+            links_page.open()
+            href_link, current_url = links_page.check_new_tab_dynamic_link()
+            assert href_link == current_url, "the link is broken or url is incorrect"
+
+        def test_broken_links(self, driver):
+            links_page = LinksPage(driver, 'https://demoqa.com/links')
+            links_page.open()
+            response_code = links_page.check_broken_links('https://demoqa.com/bad-request')
+            assert response_code == 400, "the link is correct or response code is not 400"
+            response_code = links_page.check_broken_links('https://demoqa.com/forbidden')
+            assert response_code == 403, "the link is correct or response code is not 403"
+            response_code = links_page.check_broken_links('https://demoqa.com/invalid-url')
+            assert response_code == 404, "the link is correct or response code is not 404"
 
 
 
