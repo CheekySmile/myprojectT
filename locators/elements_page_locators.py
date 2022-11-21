@@ -78,3 +78,10 @@ class LinksPageLocators:
     SIMPLE_LINK = (By.CSS_SELECTOR, "a[id='simpleLink']")
     DYNAMIC_LINK = (By.CSS_SELECTOR, "a[id='dynamicLink']")
     BAD_REQUEST_LINK = (By.CSS_SELECTOR, "a[id='bad-request']")
+
+
+class UploadAndDownloadPageLocators:
+    UPLOAD_FILE = (By.CSS_SELECTOR, "input[id='uploadFile']")
+    UPLOADED_FILE = (By.CSS_SELECTOR, "p[id='uploadedFilePath']")
+
+    DOWNLOAD_FILE = (By.CSS_SELECTOR, "a[id='downloadButton']")

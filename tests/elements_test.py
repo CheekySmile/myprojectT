@@ -1,13 +1,15 @@
+import pathlib
 import random
 import time
 
 from pages.base_page import BasePage
-from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage
+from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage, \
+    UploadAndDownloadPage
 
 
 class TestElements:
     class TestTextBox:
-        def test_text_box(self, driver):        # проверяем текстбокс
+        def test_text_box(self, driver):  # проверяем текстбокс
             text_box_page = TextBoxPage(driver, 'https://demoqa.com/text-box')
             text_box_page.open()
             full_name, email, current_address, permanent_address = text_box_page.fill_all_fields()
@@ -116,9 +118,15 @@ class TestElements:
             response_code = links_page.check_broken_links('https://demoqa.com/invalid-url')
             assert response_code == 404, "the link is correct or response code is not 404"
 
+    class TestUploadAndDownload:
+        def test_upload_file(self, driver):
+            upload_page = UploadAndDownloadPage(driver, 'https://demoqa.com/upload-download')
+            upload_page.open()
+            base_dir, text = upload_page.upload_file()
+            assert base_dir == text, "the file has not been uploaded"
 
-
-
-
-
-
+        def test_download_file(self, driver):
+            upload_page = UploadAndDownloadPage(driver, 'https://demoqa.com/upload-download')
+            upload_page.open()
+            check = upload_page.download_file()
+            assert check is True, "the file has not been downloaded"
