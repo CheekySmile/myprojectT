@@ -26,13 +26,7 @@ def generated_person():  # создаем генератор человека
 
 
 def generated_file():
-    #path = rf'C:\Users\user\PycharmProjects\myprojectT\filetest{random.randint(0, 999)}.txt'
-    #file = open(path, 'w+')
-    #file.write(f'TestMan{random.randint(0, 999)}')
-    #file.close()
 
-    #path = tmpdir.mkdir("mydir").join(f"test{random.randint(0, 999)}")
-   # path.write(f'TestMan{random.randint(0, 999)}')
     base_dir = pathlib.Path(f'test{random.randint(0, 999)}.txt')
     base_dir.write_text(f'TestMan{random.randint(0, 999)}')
     return base_dir
