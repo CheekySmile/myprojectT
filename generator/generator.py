@@ -26,7 +26,6 @@ def generated_person():  # создаем генератор человека
 
 
 def generated_file():
-
     base_dir = pathlib.Path(f'test{random.randint(0, 999)}.txt')
     base_dir.write_text(f'TestMan{random.randint(0, 999)}')
     return base_dir
